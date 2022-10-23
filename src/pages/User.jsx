@@ -6,16 +6,23 @@ import { Link } from "react-router-dom"
 import RepoList from "../components/repo/RepoList"
 import Loader from "../components/layout/Loader"
 import GithubContext from "../context/GitHub_Context/GithubContext"
+import { getUserAndRepos } from "../context/GitHub_Context/GithubActions.jsx"
 
 function User () {
-    const {getUser, getRepos, repos, user, loading} = useContext(GithubContext)
+    const {repos, user, loading, dispatch} = useContext(GithubContext)
 
     const params = useParams()
 
     useEffect( () => {
-        getUser(params.login)
-        getRepos(params.login)
-    }, [])
+        dispatch({type: 'Set_Loading'})
+
+        const getUserData = async () => {
+            const userData = await getUserAndRepos(params.login)
+            dispatch({type: 'Get_User_And_Repos', payload: userData})
+        }
+
+        getUserData()
+    }, [dispatch, params.login])
 
     const {
         name,
@@ -49,7 +56,7 @@ function User () {
                     <div className="custom-card-image mb-6 md:mb-0">
                         <div className="rounded-lg shadow-xl card image-full">
                             <figure>
-                                <img src={avatar_url}></img>
+                                <img src={avatar_url} alt=''></img>
                             </figure>
                             <div className="card-body justify-end">
                                 <h2 className="card-title mb-0">
