@@ -13,7 +13,7 @@ function UserSearch () {
     const handleChange = (e) => {
         setText(e.target.value)
         console.log(text)
-    }
+    }  
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -34,7 +34,7 @@ function UserSearch () {
                 <form onSubmit={handleSubmit}>
                     <div className="form-control">
                         <div className="relative">
-                            <input className="w-full pr-40 bg-grey-200 input input-bordered xl:input-lg lg:input-lg md:input-md text-white" placeholder="Search" value={text} onChange={handleChange}/>
+                            <input className="w-full pr-40 bg-grey-200 input input-bordered xl:input-lg lg:input-lg md:input-md" placeholder="Search" value={text} onChange={handleChange}/>
                             <button className="absolute top-0 right-0 rounded-l-none w-36 btn xl:btn-lg lg:btn-lg md:btn-md">Go</button>
                         </div>
                     </div>
