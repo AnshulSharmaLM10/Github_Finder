@@ -1,4 +1,4 @@
-import spinner from './assets/loading.gif'
+import spinner from './assets/loading2.svg'
 
 function Loader () {
     return (
