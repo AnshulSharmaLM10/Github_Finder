@@ -16,6 +16,7 @@ function Navbar({title }) {
                 <div className="flex justify-end flex-1 px-2">
                     <div className="flex items-stretch">
                     <Link to='/' className='btn'>Home</Link>
+                    <Link to='/Tools' className='btn'>Tools</Link>
                     <Link to='/About' className='btn'>About</Link>
                     <ThemeUI />
                     </div>

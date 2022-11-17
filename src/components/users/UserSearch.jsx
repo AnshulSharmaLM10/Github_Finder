@@ -25,16 +25,16 @@ function UserSearch () {
             dispatch({type: 'Set_Loading'})
             const users = await searchUsers(text)
             dispatch({type: 'Get_Users', payload: users})
-            setText('')
         }
     }
+
     return (
         <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mg-8 gap-8">
             <div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-control">
                         <div className="relative">
-                            <input className="w-full pr-40 bg-grey-200 input input-bordered xl:input-lg lg:input-lg md:input-md" placeholder="Search" value={text} onChange={handleChange}/>
+                            <input className="w-full pr-40 bg-grey-200 input input-bordered xl:input-lg lg:input-lg md:input-md" placeholder="Search Name or Username" value={text} onChange={handleChange}/>
                             <button className="absolute top-0 right-0 rounded-l-none w-36 btn xl:btn-lg lg:btn-lg md:btn-md">Go</button>
                         </div>
                     </div>
@@ -42,9 +42,13 @@ function UserSearch () {
             </div>
             {users.length >0 && (
                 <div>
-                    <button onClick={() => dispatch({type: 'CLEAR_USERS'})} type="submit" className="btn btn-ghost btn-lg">Clear</button>
+                    <button onClick={() =>  {
+                        setText('')
+                        dispatch({type: 'CLEAR_USERS'})}
+                    } 
+                        type="submit" 
+                        className="btn btn-ghost btn-lg sm:btn-sm xl:btn-lg lg:btn-lg md:btn-md">Clear</button>
                  </div>)}
-            
         </div>
     )
 }

@@ -10,7 +10,7 @@ export const GithubProvider = ({children}) => {
         repos: [],
         loading: false
     }
- 
+    
     const [state, dispatch] = useReducer(githubReducer, intialState)
  
     return <GithubContext.Provider value={{

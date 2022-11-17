@@ -2,7 +2,7 @@ import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa"
 import { useContext } from "react"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { Link } from "react-router-dom"
+import {  useNavigate } from "react-router-dom"
 import RepoList from "../components/repo/RepoList"
 import Loader from "../components/layout/Loader"
 import GithubContext from "../context/GitHub_Context/GithubContext"
@@ -10,6 +10,7 @@ import { getUserAndRepos } from "../context/GitHub_Context/GithubActions.jsx"
 
 function User () {
     const {repos, user, loading, dispatch} = useContext(GithubContext)
+    const navigate = useNavigate();
 
     const params = useParams()
 
@@ -48,9 +49,7 @@ function User () {
         <>
             <div className="w-full mx-auto lg:w-10/12">
                 <div className="mb-4">
-                    <Link to='/' className="btn btn-ghost">
-                        Back to Search
-                    </Link>
+                    <button className="btn btn-ghost" onClick={() => navigate(-1)}>Go back</button>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8">
                     <div className="custom-card-image mb-6 md:mb-0">

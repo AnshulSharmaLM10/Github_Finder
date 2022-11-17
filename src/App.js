@@ -5,7 +5,10 @@ import Alert from './components/layout/Alert'
 import User from './pages/User'
 import Home from './pages/Home'
 import About from './pages/About'
+import Tools from './pages/Tools'
 import Notfound from './pages/Notfound'
+import CommonContributors from './components/tools/Common_Contributors/CommonContributors'
+import ProjectContributors from './components/tools/Project_Contributers/ProjectContributors'
 import { GithubProvider } from './context/GitHub_Context/GithubContext'
 import { AlertProvider } from './context/Alert/AlertContext'
 
@@ -22,9 +25,12 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />} /> 
                 <Route path='/About' element={<About />} />
+                <Route path='/Tools' element={<Tools />} />
                 <Route path='/user/:login' element={<User />} />
                 <Route path='/Notfound' element={<Notfound />} />
                 <Route path='/*' element={<Notfound />} />
+                <Route path='/ProjectContributors' element={<ProjectContributors />} />
+                <Route path='/CommonContributors' element={<CommonContributors />} />
               </Routes>
 
             </main>
