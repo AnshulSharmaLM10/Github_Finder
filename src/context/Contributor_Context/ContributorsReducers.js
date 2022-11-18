@@ -4,25 +4,23 @@ const contributorsReducer = (state, action) => {
             return {
                 ...state,
                 users: action.payload,
-                loading: false
             }
         case 'Get_Contributors2':
              return {
                 ...state,
                 users2: action.payload,
-                loading2: false
             }
+        case 'Get_Contributors3':
+                return {
+                   ...state,
+                   users3: action.payload,
+                   loading: false
+               }
         case 'Get_RepoData':
             return {
                 ...state,
               repo: action.payload,
                 loading: false
-            }
-        case 'Get_RepoData2':
-            return {
-                ...state,
-                repo2: action.payload,
-                loading2: false
             }
         case 'Set_Loading':
             return {
@@ -32,7 +30,8 @@ const contributorsReducer = (state, action) => {
         case 'CLEAR_USERS2':
             return {
                 ...state,
-                users2: []
+                users2: [],
+                users3: []
             }
         case 'CLEAR_USERS':
             return {

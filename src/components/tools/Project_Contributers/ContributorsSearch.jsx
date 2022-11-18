@@ -28,6 +28,7 @@ function ContributorsSearch () {
             const users = await getContributors(ownerRepoName[0],ownerRepoName[1])
             dispatch({type: 'Get_Contributors', payload: users})
             dispatch({type: 'Get_RepoData', payload: repo})
+            console.log(users)
         }
     }
 

@@ -5,10 +5,11 @@ const ContributorsContext = createContext();
 
 export const ContributorsProvider = ({children}) => {
     const intialState = {
-        users: [],  
-        user: {},
+        users: [],
         repo: {},
-        loading: false
+        loading: false,
+        users2: [],
+        users3: [],
     }
     
     const [state, dispatch] = useReducer(contributorsReducer, intialState)

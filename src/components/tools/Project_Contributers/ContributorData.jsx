@@ -9,19 +9,17 @@ function ContributorsData () {
     if(!loading){
         return (
             <div>
-              <div className='mb-4'>
-                 {users.length > 0 && (
-                  <h2 className="card-title mb-0">
-                Owner :
-              </h2>
-                 )}
-                 <div className='grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 '>
-                 {users.map(user => {
-                  if (user.login === repo.owner.login) {
-                      return <UserItems key={user.id} user={user} />
-                   }
-                })}
-                 </div>
+            {users.length > 0 && (
+              <h2 className="card-title mb-0">
+            Owner :
+          </h2>
+             )}
+             <div className='grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 '>
+             {users.map(user => {
+              if (user.login === repo.owner.login) {
+                  return <UserItems key={user.id} user={user} />
+               }
+            })}
               </div>
               <div>
               {users.length > 1 && (

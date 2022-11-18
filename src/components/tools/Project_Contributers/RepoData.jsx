@@ -4,7 +4,6 @@ import { useContext } from 'react'
 
 function RepoData () {
     const { users, repo , loading} = useContext(ContributorsContext)
-    console.log(repo)
 
     const {
         name,
@@ -13,7 +12,6 @@ function RepoData () {
         watchers_count,
         stargazers_count,
         subscribers_count,
-        owner,
         created_at,
         updated_at,
         language,

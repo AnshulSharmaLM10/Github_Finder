@@ -9,6 +9,7 @@ import Tools from './pages/Tools'
 import Notfound from './pages/Notfound'
 import CommonContributors from './components/tools/Common_Contributors/CommonContributors'
 import ProjectContributors from './components/tools/Project_Contributers/ProjectContributors'
+import { ContributorsProvider } from './context/Contributor_Context/ContributorsContext'
 import { GithubProvider } from './context/GitHub_Context/GithubContext'
 import { AlertProvider } from './context/Alert/AlertContext'
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <GithubProvider>
     <AlertProvider>
+    <ContributorsProvider>
     <Router>
         <div className='flex flex-col justify-between h-screen'>
             <Navbar />
@@ -38,6 +40,7 @@ function App() {
             <Footer />
         </div>
     </Router>
+    </ContributorsProvider>
     </AlertProvider>
     </GithubProvider>
   );
