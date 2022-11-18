@@ -3,7 +3,7 @@ import { FaEye, FaBell, FaStar, FaUtensils } from 'react-icons/fa'
 import { useContext } from 'react'
 
 function RepoData () {
-    const { users, repo , loading} = useContext(ContributorsContext)
+    const { users, repo } = useContext(ContributorsContext)
 
     const {
         name,
