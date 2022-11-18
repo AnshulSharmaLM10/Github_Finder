@@ -35,7 +35,7 @@ function Navbar({title }) {
                     </Link>
                 </div>
                 <div className="flex justify-end flex-1 px-2">
-                    {windowSize.innerWidth <= 600 && (
+                    {windowSize.innerWidth <= 450 && (
                         <div>
                             <ThemeUI />
                             <div className="dropdown dropdown-end">
@@ -51,7 +51,7 @@ function Navbar({title }) {
                             </div>
                         </div>
                     )}
-                    {windowSize.innerWidth > 600 && (<div className="flex items-stretch">
+                    {windowSize.innerWidth > 450 && (<div className="flex items-stretch">
                     <Link to='/' className='btn'>Home</Link>
                     <Link to='/Tools' className='btn'>Tools</Link>
                     <Link to='/About' className='btn'>About</Link>
